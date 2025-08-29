@@ -1,0 +1,46 @@
+# Ignore build files and generated content
+simpleQtApp/debug/
+simpleQtApp/release/
+simpleQtApp/*.o
+simpleQtApp/*.obj
+simpleQtApp/moc_*.cpp
+simpleQtApp/moc_*.h
+simpleQtApp/ui_*.h
+simpleQtApp/qrc_*.cpp
+simpleQtApp/Makefile*
+simpleQtApp/object_script.*
+simpleQtApp/.qmake.stash
+
+# Ignore IDE files
+.vscode/
+*.pro.user
+*.pro.user.*
+
+# Ignore temporary files
+*.tmp
+*.temp
+*~
+
+# Ignore log files
+*.log
+
+# Ignore runtime cache files (but keep structure)
+simpleQtApp/cache/cache.json
+simpleQtApp/cache/people_cache.json
+
+# Keep sample data files
+!people_data.json
+!sample_data/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.backup
+
+# IMPORTANT: Keep libs/ directory for portability!
+# libs/ contains all dependencies needed for zero-installation builds
+# This makes the project completely self-contained

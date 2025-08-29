@@ -1,0 +1,171 @@
+[
+  {
+    "id": "VT_0426",
+    "destination": "Vung Tau",
+    "description": "Di cham bien cung Bet",
+    "start_date": "26/4/2025",
+    "end_date": "27/4/2025",
+    "status": "Completed",
+    "host_id": "NL_0728",
+    "member_ids": [
+      "HN_0728",
+      "NN_0728",
+      "TVB_0325"
+    ]
+  },
+  {
+    "id": "HCM_0607",
+    "destination": "Ho Chi Minh",
+    "description": "Di cham co cung Bet",
+    "start_date": "7/6/2025",
+    "end_date": "7/6/2025",
+    "status": "Completed",
+    "host_id": "PD_0728",
+    "member_ids": [
+      "HDT_0909",
+      "TBP_0621"
+    ]
+  },
+  {
+    "id": "DL_0712",
+    "destination": "Da Lat",
+    "description": "Kham pha thanh pho suong mu cung nhom",
+    "start_date": "12/7/2025",
+    "end_date": "14/7/2025",
+    "status": "Cancelled",
+    "host_id": "LTQH_0325",
+    "member_ids": [
+      "DQB_0120",
+      "LEKA_0708",
+      "PVD_0430"
+    ]
+  },
+  {
+    "id": "PQ_0905",
+    "destination": "Phu Quoc",
+    "description": "Nghi duong bien dao cung nhom ban",
+    "start_date": "5/9/2025",
+    "end_date": "9/9/2025",
+    "status": "Completed",
+    "host_id": "VTMH_0620",
+    "member_ids": [
+      "DMQ_0818",
+      "TTH_0222",
+      "PTM_1003",
+      "NVL_0127"
+    ]
+  },
+  {
+    "id": "HN_1120",
+    "destination": "Ha Noi",
+    "description": "Tham thu do ngan nam van hien",
+    "start_date": "20/11/2025",
+    "end_date": "24/11/2025",
+    "status": "Cancelled",
+    "host_id": "VTM_1215",
+    "member_ids": [
+      "HN_0728",
+      "TVB_0325"
+    ]
+  },
+  {
+    "id": "S_0103",
+    "destination": "Sapa",
+    "description": "Trekking vung nui Tay Bac",
+    "start_date": "3/1/2026",
+    "end_date": "6/1/2026",
+    "status": "Ongoing",
+    "host_id": "NTL_1112",
+    "member_ids": [
+      "NN_0728",
+      "HDT_0909",
+      "TBP_0621",
+      "DQB_0120"
+    ]
+  },
+  {
+    "id": "NT_0318",
+    "destination": "Nha Trang",
+    "description": "Tam bien va lan ngam san ho",
+    "start_date": "18/3/2026",
+    "end_date": "22/3/2026",
+    "status": "Planned",
+    "host_id": "LVT_0514",
+    "member_ids": [
+      "LEKA_0708",
+      "PVD_0430"
+    ]
+  },
+  {
+    "id": "CT_0510",
+    "destination": "Can Tho",
+    "description": "Trai nghiem mien Tay song nuoc",
+    "start_date": "10/5/2026",
+    "end_date": "11/5/2026",
+    "status": "Cancelled",
+    "host_id": "NL_0728",
+    "member_ids": [
+      "DMQ_0818",
+      "TTH_0222",
+      "PTM_1003"
+    ]
+  },
+  {
+    "id": "HLB_0801",
+    "destination": "Ha Long Bay",
+    "description": "Du thuyen va kham pha vinh Ha Long",
+    "start_date": "1/8/2026",
+    "end_date": "3/8/2026",
+    "status": "Completed",
+    "host_id": "PD_0728",
+    "member_ids": [
+      "NVL_0127",
+      "HN_0728",
+      "NN_0728"
+    ]
+  },
+  {
+    "id": "DN_0915",
+    "destination": "Da Nang",
+    "description": "Du lich bien va nui ngu hanh son",
+    "start_date": "15/9/2026",
+    "end_date": "18/9/2026",
+    "status": "Completed",
+    "host_id": "LTQH_0325",
+    "member_ids": [
+      "TVB_0325",
+      "HDT_0909",
+      "TBP_0621",
+      "DQB_0120",
+      "LEKA_0708"
+    ]
+  },
+  {
+    "id": "VHB_1015",
+    "destination": "Vinh Hy Bay",
+    "description": "Lan bien ngam san ho tai vinh Vinh Hy",
+    "start_date": "15/10/2026",
+    "end_date": "17/10/2026",
+    "status": "Completed",
+    "host_id": "VTMH_0620",
+    "member_ids": [
+      "PVD_0430",
+      "DMQ_0818"
+    ]
+  },
+  {
+    "id": "NB_1202",
+    "destination": "Ninh Binh",
+    "description": "Tham quan danh lam thang canh co do",
+    "start_date": "2/12/2026",
+    "end_date": "4/12/2026",
+    "status": "Completed",
+    "host_id": "VTM_1215",
+    "member_ids": [
+      "TTH_0222",
+      "PTM_1003",
+      "NVL_0127",
+      "TVB_0325"
+    ]
+  }
+]

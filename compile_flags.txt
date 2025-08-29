@@ -1,0 +1,17 @@
+-x
+c++
+-std=c++17
+-ID:/Study/HCMUS/1st year/sem 3/OOP/Project
+-ID:/Study/HCMUS/1st year/sem 3/OOP/Project/simpleQtApp
+-ID:/Study/HCMUS/1st year/sem 3/OOP/Project/simpleQtApp/Managers
+-ID:/Study/HCMUS/1st year/sem 3/OOP/Project/simpleQtApp/Models
+-ID:/Study/HCMUS/1st year/sem 3/OOP/Project/simpleQtApp/UI/output
+-IC:/msys64/mingw64/include
+-IC:/msys64/mingw64/include/QtCore
+-IC:/msys64/mingw64/include/QtGui
+-IC:/msys64/mingw64/include/QtWidgets
+-IC:/msys64/mingw64/include/Qt
+-DQT_WIDGETS_LIB
+-DQT_GUI_LIB
+-DQT_CORE_LIB
+

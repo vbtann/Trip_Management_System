@@ -1,9 +1,20 @@
 QT += core widgets gui
 
-CONFIG += c++17 debug_and_release
+CONFIG += c++17 debug_and_release windows 
 
 TARGET = simpleQtApp
 TEMPLATE = app
+
+# Remove console window for release builds
+CONFIG(release, debug|release) {
+    CONFIG += windows
+    CONFIG -= console
+}
+
+# Keep console for debug builds to see error messages
+CONFIG(debug, debug|release) {
+    CONFIG += console
+}
 
 INCLUDEPATH += UI Models Managers include
 

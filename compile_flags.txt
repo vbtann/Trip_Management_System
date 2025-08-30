@@ -1,16 +1,14 @@
 -x
 c++
 -std=c++17
--ID:/Study/HCMUS/1st year/sem 3/OOP/Project
--ID:/Study/HCMUS/1st year/sem 3/OOP/Project/simpleQtApp
--ID:/Study/HCMUS/1st year/sem 3/OOP/Project/simpleQtApp/Managers
--ID:/Study/HCMUS/1st year/sem 3/OOP/Project/simpleQtApp/Models
--ID:/Study/HCMUS/1st year/sem 3/OOP/Project/simpleQtApp/UI/output
--IC:/msys64/mingw64/include
--IC:/msys64/mingw64/include/QtCore
--IC:/msys64/mingw64/include/QtGui
--IC:/msys64/mingw64/include/QtWidgets
--IC:/msys64/mingw64/include/Qt
+-ID:/Study/HCMUS/1st year/sem 3/OOP/Group_9/Project
+-ID:/Study/HCMUS/1st year/sem 3/OOP/Group_9/Project/simpleQtApp
+-ID:/Study/HCMUS/1st year/sem 3/OOP/Group_9/Project/simpleQtApp/Managers
+-ID:/Study/HCMUS/1st year/sem 3/OOP/Group_9/Project/simpleQtApp/Models
+-ID:/Study/HCMUS/1st year/sem 3/OOP/Group_9/Project/simpleQtApp/UI/output
+-ID:\Apps\Qt\Install\6.9.1\mingw_64\bin\Qt6Core
+-ID:\Apps\Qt\Install\6.9.1\mingw_64\bin\Qt6Gui
+-ID:\Apps\Qt\Install\6.9.1\mingw_64\bin\Qt6Widgets
 -DQT_WIDGETS_LIB
 -DQT_GUI_LIB
 -DQT_CORE_LIB

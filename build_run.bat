@@ -89,18 +89,91 @@ if not exist "release\simpleQtApp.exe" (
     exit /b 1
 )
 
-:: Deploy Qt dependencies
+:: Enhanced deployment section
 echo Deploying Qt dependencies...
 cd release
-windeployqt simpleQtApp.exe >nul 2>&1
+
+echo Running windeployqt with verbose output...
+windeployqt simpleQtApp.exe --debug --compiler-runtime --force --verbose 2
 if %errorlevel% neq 0 (
-    echo WARNING: windeployqt failed, trying manual deployment...
-    :: Manual deployment fallback
+    echo windeployqt failed with error %errorlevel%, performing manual deployment...
+    
+    :: Get Qt installation paths
+    for /f "tokens=*" %%i in ('qmake -query QT_INSTALL_BINS') do set QT_BIN_DIR=%%i
+    for /f "tokens=*" %%i in ('qmake -query QT_INSTALL_PLUGINS') do set QT_PLUGINS_DIR=%%i
+    
+    echo Qt bin directory: %QT_BIN_DIR%
+    echo Qt plugins directory: %QT_PLUGINS_DIR%
+    
+    :: Ensure directories exist
     if not exist "platforms" mkdir platforms
-    if exist "%QTDIR%\plugins\platforms\qwindows.dll" (
-        copy "%QTDIR%\plugins\platforms\qwindows.dll" platforms\ >nul 2>&1
+    
+    :: Copy essential Qt DLLs
+    echo Copying Qt DLLs...
+    if exist "%QT_BIN_DIR%\Qt6Core.dll" (
+        copy "%QT_BIN_DIR%\Qt6Core.dll" . >nul 2>&1
+        copy "%QT_BIN_DIR%\Qt6Gui.dll" . >nul 2>&1  
+        copy "%QT_BIN_DIR%\Qt6Widgets.dll" . >nul 2>&1
     )
+    
+    :: Copy MinGW runtime DLLs (critical for standalone execution)
+    echo Copying MinGW runtime DLLs...
+    copy "%MINGW_PATH%\libgcc_s_seh-1.dll" . >nul 2>&1
+    copy "%MINGW_PATH%\libstdc++-6.dll" . >nul 2>&1
+    copy "%MINGW_PATH%\libwinpthread-1.dll" . >nul 2>&1
+    
+    :: Copy platform plugin (absolutely essential)
+    echo Copying platform plugins...
+    copy "%QT_PLUGINS_DIR%\platforms\qwindows.dll" platforms\ >nul 2>&1
+    
+    echo Manual deployment completed.
+) else (
+    echo windeployqt completed successfully!
 )
+
+:: Verify deployment
+echo Verifying deployment...
+set DEPLOYMENT_OK=1
+
+if not exist "platforms\qwindows.dll" (
+    echo ERROR: qwindows.dll missing from platforms directory!
+    set DEPLOYMENT_OK=0
+)
+
+if not exist "Qt6Core.dll" (
+    echo ERROR: Qt6Core.dll missing!
+    set DEPLOYMENT_OK=0
+)
+
+if not exist "libgcc_s_seh-1.dll" (
+    echo ERROR: libgcc_s_seh-1.dll missing!
+    set DEPLOYMENT_OK=0
+)
+
+if %DEPLOYMENT_OK% equ 0 (
+    echo.
+    echo CRITICAL: Deployment incomplete!
+    echo The application will not run independently.
+    echo Current directory contents:
+    dir /b *.dll *.exe
+    echo.
+    echo Platforms directory:
+    if exist platforms (dir platforms /b) else (echo Directory missing!)
+    cd ..
+    cd ..
+    pause
+    exit /b 1
+)
+
+echo Deployment verification passed!
+
+:: Copy cache directory if it exists (might be needed by your app)
+if exist "..\cache" (
+    echo Copying cache directory...
+    if not exist "cache" mkdir cache
+    xcopy "..\cache\*" "cache\" /E /Y >nul 2>&1
+)
+
 cd ..
 
 echo.
@@ -109,26 +182,17 @@ echo Build successful! Starting application...
 echo ========================================
 echo.
 
-:: Run the application
-start "" "release\simpleQtApp.exe"
-
-:: Wait a moment to see if the app starts successfully
-timeout /t 2 >nul
-
-:: Check if process is running
-tasklist /fi "imagename eq simpleQtApp.exe" 2>nul | find /i "simpleQtApp.exe" >nul
-if %errorlevel% equ 0 (
-    echo Application started successfully!
-    echo You can now test your changes.
-    echo.
-    echo Press any key to close this window...
-    pause >nul
-) else (
-    echo WARNING: Application may not have started properly.
-    echo Check if there are any error messages.
-    echo.
-    pause
+:: Test standalone execution first
+echo Testing standalone execution...
+cd release
+echo Current working directory: %CD%
+echo Running executable directly...
+simpleQtApp.exe
+if %errorlevel% neq 0 (
+    echo ERROR: Application failed to start independently!
+    echo Exit code: %errorlevel%
 )
+cd ..
 
 :: Return to project root
 cd ..

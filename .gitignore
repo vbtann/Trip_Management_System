@@ -24,13 +24,12 @@ simpleQtApp/.qmake.stash
 # Ignore log files
 *.log
 
-# Ignore runtime cache files (but keep structure)
-simpleQtApp/cache/cache.json
-simpleQtApp/cache/people_cache.json
-
 # Keep sample data files
 !people_data.json
 !sample_data/
+
+# Keep cache folder
+!simpleQtApp/cache/
 
 # OS specific files
 .DS_Store

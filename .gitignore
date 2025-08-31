@@ -1,15 +1,15 @@
 # Ignore build files and generated content
-simpleQtApp/debug/
-simpleQtApp/release/
-simpleQtApp/*.o
-simpleQtApp/*.obj
-simpleQtApp/moc_*.cpp
-simpleQtApp/moc_*.h
-simpleQtApp/ui_*.h
-simpleQtApp/qrc_*.cpp
-simpleQtApp/Makefile*
-simpleQtApp/object_script.*
-simpleQtApp/.qmake.stash
+TripManagementSystem/debug/
+TripManagementSystem/release/
+TripManagementSystem/*.o
+TripManagementSystem/*.obj
+TripManagementSystem/moc_*.cpp
+TripManagementSystem/moc_*.h
+TripManagementSystem/ui_*.h
+TripManagementSystem/qrc_*.cpp
+TripManagementSystem/Makefile*
+TripManagementSystem/object_script*
+TripManagementSystem/.qmake.stash
 
 # Ignore IDE files
 .vscode/
@@ -29,7 +29,7 @@ simpleQtApp/.qmake.stash
 !sample_data/
 
 # Keep cache folder
-!simpleQtApp/cache/
+!TripManagementSystem/cache/
 
 # OS specific files
 .DS_Store
@@ -39,7 +39,3 @@ desktop.ini
 # Backup files
 *.bak
 *.backup
-
-# IMPORTANT: Keep libs/ directory for portability!
-# libs/ contains all dependencies needed for zero-installation builds
-# This makes the project completely self-contained

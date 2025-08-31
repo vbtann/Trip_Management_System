@@ -23,7 +23,7 @@ echo Qt found! Building and running project...
 echo.
 
 :: Navigate to project directory
-cd /d simpleQtApp
+cd /d TripManagementSystem
 
 :: Clean previous build
 echo Cleaning previous build...
@@ -36,8 +36,8 @@ if exist Makefile (
 )
 
 :: Remove old files
-if exist "release\simpleQtApp.exe" del "release\simpleQtApp.exe" >nul 2>&1
-if exist "debug\simpleQtApp.exe" del "debug\simpleQtApp.exe" >nul 2>&1
+if exist "release\TripManagementSystem.exe" del "release\TripManagementSystem.exe" >nul 2>&1
+if exist "debug\TripManagementSystem.exe" del "debug\TripManagementSystem.exe" >nul 2>&1
 
 :: Generate Makefile
 echo Generating Makefile with qmake...
@@ -81,7 +81,7 @@ if %errorlevel% neq 0 (
 )
 
 :: Check if executable was created
-if not exist "release\simpleQtApp.exe" (
+if not exist "release\TripManagementSystem.exe" (
     echo ERROR: Executable not found after build!
     echo Build may have failed silently.
     cd ..
@@ -95,7 +95,7 @@ cd release
 
 :: Try windeployqt first
 echo Running windeployqt...
-windeployqt simpleQtApp.exe --compiler-runtime --force
+windeployqt TripManagementSystem.exe --compiler-runtime --force
 if %errorlevel% neq 0 (
     echo windeployqt failed, performing complete manual deployment...
     
@@ -177,8 +177,8 @@ echo Verifying standalone deployment...
 set DEPLOYMENT_FAILED=0
 
 echo Checking for executable...
-if not exist "simpleQtApp.exe" (
-    echo ERROR: simpleQtApp.exe missing!
+if not exist "TripManagementSystem.exe" (
+    echo ERROR: TripManagementSystem.exe missing!
     set DEPLOYMENT_FAILED=1
 )
 
@@ -234,23 +234,23 @@ echo.
 
 :: Test standalone execution
 echo Testing standalone execution...
-start "" "release\simpleQtApp.exe"
+start "" "release\TripManagementSystem.exe"
 
 :: Wait a moment to see if the app starts successfully
 timeout /t 3 >nul
 
 :: Check if process is running
-tasklist /fi "imagename eq simpleQtApp.exe" 2>nul | find /i "simpleQtApp.exe" >nul
+tasklist /fi "imagename eq TripManagementSystem.exe" 2>nul | find /i "TripManagementSystem.exe" >nul
 if %errorlevel% equ 0 (
     echo SUCCESS: Application started and is running!
-    echo You can now double-click the simpleQtApp.exe file directly.
+    echo You can now double-click the TripManagementSystem.exe file directly.
     echo.
-    echo Executable location: %CD%\simpleQtApp\release\simpleQtApp.exe
+    echo Executable location: %CD%\TripManagementSystem\release\TripManagementSystem.exe
     echo.
 ) else (
     echo WARNING: Application may not have started properly.
     echo Try running the executable manually to see any error messages.
-    echo Location: %CD%\simpleQtApp\release\simpleQtApp.exe
+    echo Location: %CD%\TripManagementSystem\release\TripManagementSystem.exe
     echo.
 )
 

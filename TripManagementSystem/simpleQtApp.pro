@@ -2,11 +2,10 @@ QT += core widgets gui
 
 CONFIG += c++17 debug_and_release 
 
-TARGET = simpleQtApp
+TARGET = TripManagementSystem
 TEMPLATE = app
 
 INCLUDEPATH += UI Models Managers include
-
 # Main application file
 SOURCES += main.cpp
 
@@ -68,13 +67,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # Debug configuration
 CONFIG(debug, debug|release) {
     DESTDIR = debug
-    TARGET = simpleQtApp
+    TARGET = TripManagementSystem
 }
 
 # Release configuration  
 CONFIG(release, debug|release) {
     DESTDIR = release
-    TARGET = simpleQtApp
+    TARGET = TripManagementSystem
 }
 
 # Additional compiler flags for better debugging

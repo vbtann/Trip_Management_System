@@ -162,7 +162,7 @@ class MainWindow : public QMainWindow, public OBSERVER {
     // Helper function to get project path (relative to executable)
     QString getProjectPath() const {
         QDir currentDir = QDir::current();
-        currentDir.cdUp();  // Go up from simpleQtApp to project root
+        currentDir.cdUp();
         return currentDir.absolutePath();
     }
 };
